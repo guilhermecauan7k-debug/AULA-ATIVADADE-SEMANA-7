@@ -1,15 +1,19 @@
-Apague o que estiver no arquivo e cole este código:
 name: Teste com Python
+
 on: [push]
+
 jobs:
-testar-python:
-runs-on: ubuntu-latest
-steps:
-- name: Baixar o código
-uses: actions/checkout@v3
-- name: Instalar Python
-uses: actions/setup-python@v4
-with:
-python-version: &#39;3.11&#39;
-- name: Executar arquivo Python
-run: python app.py
+  testar-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v3
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Executar arquivo Python
+        run: python app.py
